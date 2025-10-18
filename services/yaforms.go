@@ -19,7 +19,7 @@ type YaFormsService struct {
 }
 
 func (y *YaFormsService) handleYaForms(r *http.Request, args *SendMessageArgs) error {
-	msg := tgbotapi.NewMessage(args.ChatID, args.Text)
+	msg := tgbotapi.NewMessage(args.ChatID, args.Aboba)
 	_, err := y.Bot.Send(msg)
 	if err != nil {
 		return err

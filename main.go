@@ -5,6 +5,7 @@ import (
 	"os"
 	"sovet_bot/db"
 	"sovet_bot/handlers"
+	"sovet_bot/services"
 
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 	"github.com/joho/godotenv"
@@ -26,6 +27,8 @@ func main() {
 
 	u := tgbotapi.NewUpdate(0)
 	u.Timeout = 60
+
+	go services.CreateNewRpc(bot)
 
 	updates := bot.GetUpdatesChan(u)
 
