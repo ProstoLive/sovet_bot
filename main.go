@@ -28,7 +28,7 @@ func main() {
 	u := tgbotapi.NewUpdate(0)
 	u.Timeout = 60
 
-	go services.CreateNewRpc(bot)
+	go services.CreateNewYaFormsServer(bot)
 
 	updates := bot.GetUpdatesChan(u)
 
