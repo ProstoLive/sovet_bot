@@ -21,3 +21,11 @@ CREATE TABLE application_states (
     updated_at TIMESTAMPTZ NOT NULL
 );
 
+CREATE TABLE events {
+    id SERIAL PRIMARY KEY,
+    name TEXT,
+    description TEXT,
+    place TEXT,
+    datetime TIMESTAMP,
+    author_id BIGINT
+}
